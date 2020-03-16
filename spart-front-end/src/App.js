@@ -1,58 +1,53 @@
 import React from "react";
-import Spinner from "react-bootstrap/Spinner";
+import { Spinner, Container, Row, Col, ResponsiveEmbed } from "react-bootstrap/";
+import ConsultantCard from "./Components/ConsultantCard";
+import NavBar from "./Components/NavBar";
+import Video from 'react-native-video'
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {
-			students: [],
-			isLoaded: false
-		};
-	}
+    this.state = {
+      students: [],
+      isLoaded: false
+    };
+  }
 
-	/**
-	 * componentDidMount
-	 *
-	 * Fetch json array of objects from given url and update state.
-	 */
-	componentDidMount() {
-		fetch("http://localhost:56767/api/consultants")
-			.then(res => res.json())
-			.then(json => {
-				this.setState({
-					students: json,
-					isLoaded: true
-				});
-			})
-			.catch(err => {
-				console.log(err);
-			});
-	}
+  componentDidMount() {
+    fetch("http://localhost:56767/api/consultants")
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          students: json,
+          isLoaded: true
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
-	/**
-	 * render
-	 *
-	 * Render UI
-	 */
-	render() {
-		const { isLoaded, students } = this.state;
+  /**
+   * render
+   *
+   * Render UI
+   */
+  render() {
+    const { students } = this.state;
+    return (
+      <div>
+        <NavBar />
 
-		if (!isLoaded)
-			return (
-				<Spinner animation="border" role="status">
-					<span className="sr-only">Loading...</span>
-				</Spinner>
-			);
-
-		return (
-			<div className="App">
-				{students.map(item => (
-					<li id={item.consultantId}>{item.firstName}</li>
-				))}
-			</div>
-		);
-	}
+        <Container>
+          <Row>
+            <Col><Video></Video></Col>
+            <Col><ConsultantCard handleStudents={this.state.students} /></Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
