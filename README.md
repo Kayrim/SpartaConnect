@@ -34,6 +34,7 @@ Web application will be deploted on onto netlify.
 * **James** [Github](https://github.com/)
 * **Jordan** [Github](https://github.com/)
 * **Hassan** [Github](https://github.com/)
+* **Timothy Wong** [Github](https://github.com/tim8642)
 
 ## License
 
