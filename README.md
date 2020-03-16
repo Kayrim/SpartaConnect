@@ -5,6 +5,8 @@ Comprised of data held in an ASP.NET API back-end with React used to build the u
 
 ## Sprint Log
 ### Sprint 0
+We started off sprint 0 with our initial planning, which consisted of requirement gathering, Database relationship planning and creating User Stories through epics and features that were to be included. We used a *Github Project board* to group our user stories according to the user requirement.
+We created the database, after writing out an SQL query to create our initial database. We then scaffolded our DB context to create our model classes, as well as add controllers to help us view, edit and delete data from the database. In addition to this, we edited the according files so that we could load an initial page when running a project, and pushed everything back up to Github as our first iteration.
 
 ## Getting Started
 
