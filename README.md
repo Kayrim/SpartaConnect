@@ -31,7 +31,7 @@ Web application will be deploted on onto netlify.
 * **Stephen Callum** [Github](https://github.com/Stephen-Callum)
 * **Karim Bakkali** [Github](https://github.com/Kayrim)
 * **Jamie Benjamin** [Github](https://github.com/jamieb97)
-* **James** [Github](https://github.com/)
+* **James Kavanagh** [Github](https://github.com/jwKav)
 * **Jordan** [Github](https://github.com/)
 * **Hassan** [Github](https://github.com/)
 * **Timothy Wong** [Github](https://github.com/tim8642)
