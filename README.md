@@ -3,6 +3,9 @@
 A sparta themed web application which contains pages for student user profiles and their corresponding trainers.
 Comprised of data held in an ASP.NET API back-end with React used to build the user interface to interact with the data.
 
+## Sprint Log
+### Sprint 0
+
 ## Getting Started
 
 Clone the project from github and run the SQL query to create the SpartaDB.
