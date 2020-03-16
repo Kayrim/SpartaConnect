@@ -28,9 +28,9 @@ Web application will be deploted on onto netlify.
 * **Stephen Callum** [Github](https://github.com/Stephen-Callum)
 * **Karim Bakkali** [Github](https://github.com/Kayrim)
 * **Jamie Benjamin** [Github](https://github.com/jamieb97)
-* **James** [Github](https://github.com/jamieb97)
-* **Jordan** [Github](https://github.com/jamieb97)
-* **Hassan** [Github](https://github.com/jamieb97)
+* **James** [Github](https://github.com/)
+* **Jordan** [Github](https://github.com/)
+* **Hassan** [Github](https://github.com/)
 
 ## License
 
