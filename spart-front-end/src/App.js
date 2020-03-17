@@ -6,11 +6,11 @@ import NavBar from "./Components/NavBar";
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			items: [],
 			isLoaded: false
 		};
+		this.updateList = this.updateList.bind(this);
 	}
 
 	componentDidMount() {
@@ -27,22 +27,21 @@ class App extends React.Component {
 			});
 	}
 
-	/**
-	 * render
-	 *
-	 * Render UI
-	 */
+	updateList(newList) {
+		this.setState({ items: newList });
+	}
+
 	render() {
 		const list = this.state.items;
 
 		return (
 			<div>
-				<NavBar />
+				<NavBar handleList={list} TriggerListChange={this.updateList} />
 				{list.map(item => (
 					<Container key={item.consultantId}>
-						<Row>
+						<Row className="mx-auto my-4">
 							<Col>
-								<video width="500" height="300" controls>
+								<video width="600" height="350" controls>
 									<source src="/movie.mp4" type="video/mp4" />
 								</video>
 							</Col>

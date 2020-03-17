@@ -6,11 +6,6 @@ class ConsultantCard extends React.Component {
 		super(props);
 	}
 
-	downloadCv(item) {
-		item = this.props.handleStudents;
-		return item.cvLink + "&download=1";
-	}
-
 	render() {
 		const item = this.props.handleStudents;
 		return (
@@ -35,7 +30,16 @@ class ConsultantCard extends React.Component {
 						<li style={{ listStyleType: "none" }}>
 							{"Bio: "} {item.bio}
 						</li>
-						<Button href={item.cvLink + "&download=1"}>Download CV</Button>{" "}
+						<li style={{ listStyleType: "none" }}>
+							{"Stream: "} {"C# Dev"}
+						</li>
+						<Button
+							variant="dark"
+							style={{ marginTop: "1rem" }}
+							href={item.cvLink + "&download=1"}
+						>
+							Download CV
+						</Button>{" "}
 					</Card.Text>
 				</Card.Body>
 			</Card>
