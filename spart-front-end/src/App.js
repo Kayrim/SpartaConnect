@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap/";
 import ConsultantCard from "./Components/ConsultantCard";
 import NavBar from "./Components/NavBar";
+import "../src/App.css";
 
 class App extends React.Component {
 	constructor(props) {
@@ -62,14 +63,18 @@ class App extends React.Component {
 			<div>
 				<NavBar handleList={list} TriggerListChange={this.updateFilter} />
 				{filteredList.map(item => (
-					<Container className="bg-dark" key={item.consultantId}>
-						<Row className=" my-4">
-							<Col md=" float-left">
+					<Container
+						className="Container my-5"
+						style={{ border: "4px solid white !important" }}
+						key={item.consultantId}
+					>
+						<Row className="my-2">
+							<Col className="my-auto">
 								<video width="600" height="350" controls>
 									<source src="/movie.mp4" type="video/mp4" />
 								</video>
 							</Col>
-							<Col md="float-right">
+							<Col>
 								<ConsultantCard handleStudents={item} />
 							</Col>
 						</Row>
