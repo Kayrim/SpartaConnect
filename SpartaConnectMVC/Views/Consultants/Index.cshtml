@@ -49,9 +49,9 @@
         {
             foreach (var item in Model)
             {
-
+                string imagePath = $"img/{item.FirstName}_{item.LastName}.jpg"; 
                 <div class="card">
-                    <img src="~/img/@item.FirstName @item.LastName" alt="4" width="200" height="200" />
+                    <img src=@imagePath alt="4" width="200" height="200" />
                     <div class="container">
                         <h4>
                             <b>

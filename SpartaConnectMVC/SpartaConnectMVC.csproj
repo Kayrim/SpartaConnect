@@ -23,12 +23,12 @@
 
   <ItemGroup>
     <None Include="wwwroot\img\Hassan_Abdullahi.jpg" />
-    <None Include="wwwroot\img\James Kavanagh.jpg" />
-    <None Include="wwwroot\img\Jamie Benjamin.jpg" />
-    <None Include="wwwroot\img\Jordan Benbelaid.jpg" />
-    <None Include="wwwroot\img\Karim Bakkali.jpg" />
-    <None Include="wwwroot\img\Stephen Callum.jpg" />
-    <None Include="wwwroot\img\Timothy Wong.jpg" />
+    <None Include="wwwroot\img\James_Kavanagh.jpg" />
+    <None Include="wwwroot\img\Jamie_Benjamin.jpg" />
+    <None Include="wwwroot\img\Jordan_Benbelaid.jpg" />
+    <None Include="wwwroot\img\Karim_Bakkali.jpg" />
+    <None Include="wwwroot\img\Stephen_Callum.jpg" />
+    <None Include="wwwroot\img\Timothy_Wong.jpg" />
   </ItemGroup>
 
 
