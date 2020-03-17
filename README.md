@@ -11,7 +11,7 @@ We started off sprint 0 with our initial planning, which consisted of requiremen
 
 We created our User Stories after we had spoken to our product owner who had let us know what product they were looking for, along with what sorts of features they wanted and how they wanted it laid out. With a provided wireframe it gave us a clear indicator on how they wanted it to look as well. Our project was to create a web page that contained a search function, a filter function, tiles per trainee that had a video profile as well as an image and bio for each trainee. After we discussed and made sure we had a clear idea of what was expected, we started writing user stories to create a backlog.
 
-## Sprint planning
+## Sprint 1 planning
 In our sprint planning, we split up into teams to help us attack this task correctly. For our first sprint we decided we would start basic and one team would make an MVC page that just has the layout, without the functionality as sprint 1. We also decided that we would have the other team create the same page using React, as we felt this would look cleaner for the overall product. 
 
 ## Sprint 1 Actual
