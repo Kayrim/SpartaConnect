@@ -1,0 +1,133 @@
+﻿@model IEnumerable<SpartaConnect_API.Models.Consultant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Consultants</h1>
+@using (Html.BeginForm("Index", "Consultants", FormMethod.Get))
+{
+    @Html.TextBox("searching")
+    <input type="submit" value="Search" />
+}
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        padding: 20px 16px;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+    .container {
+        padding: 20px 16px;
+        margin-left: 20px;
+    }
+    .content-main{
+        list-style-type: none;      
+    }
+    .content-item{
+        font-size: 1.3em;
+        padding: 1vw 1vh;
+    }
+</style>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<!--
+<div class="card">
+    <img src="https://picsum.photos/200/300?random=4" alt="4" width="200" height="200" />
+    <div class="container">
+        <h4>
+            <b>
+                
+            </b>
+        </h4>
+        <p>This is a sentence</p>
+    </div>
+</div>
+-->
+
+    
+    
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="3" style="color:red">
+                    No Match Any Documents
+                </td>
+
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+
+                <div class="card">
+                    <img src="@Html.DisplayFor(modelItem => item.Photo)" alt="4" width="200" height="200" />
+                    <div class="container">
+                        <h4>
+                            <b>
+                                @Html.DisplayFor(modelItem => item.FirstName)
+                                @Html.DisplayFor(modelItem => item.LastName)
+                            </b>
+                        </h4>
+                        <ul class="content-main">
+                            <li class="content-item">
+                                @Html.DisplayFor(modelItem => item.CvLink)
+                            </li>
+                            <li class="content-item">
+                                @Html.DisplayFor(modelItem => item.University)
+                            </li>
+                            <li class="content-item">
+                                @Html.DisplayFor(modelItem => item.Course.CourseName)
+                            </li>
+                            <li class="content-item">
+                                @Html.DisplayFor(modelItem => item.Bio)
+                            </li>                         
+                        </ul>
+                    </div>
+                </div>
+                /* <tr>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.LastName)
+                     </td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.FirstName)
+                     </td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.Photo)
+                     </td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.Bio)
+                     </td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.University)
+                     </td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.CvLink)
+                     </td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.VideoLink)
+                     </td>
+                     <td>
+                         @Html.DisplayFor(modelItem => item.Course.CourseName)
+                     </td>
+                     <td>
+                         <a asp-action="Edit" asp-route-id="@item.ConsultantId">Edit</a> |
+                         <a asp-action="Details" asp-route-id="@item.ConsultantId">Details</a> |
+                         <a asp-action="Delete" asp-route-id="@item.ConsultantId">Delete</a>
+                     </td>
+                 </tr>*/
+            }
+
+        }
+
+    
+
