@@ -1,48 +1,52 @@
-import React, { Component } from "react";
-import { Card, Button } from "react-bootstrap";
+import React from "react";
+import { Card, Button, Row, Col } from "react-bootstrap";
+import "./ConsultantCard.css";
 
 class ConsultantCard extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		const item = this.props.handleStudents;
 		return (
-			<Card
-				className="mt-2"
-				bg="light"
-				variant="light"
-				style={{ alignItems: "center", width: "18rem" }}
-			>
-				<Card.Img
-					variant="top"
-					src="https://www.thesprucepets.com/thmb/ngEcQBHHXcHYXh8PPTvGttRxYN0=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/high-angle-view-of-chimpanzee-in-forest-769784687-5b1e76d63de4230037ce6f9d.jpg"
-				/>
-				<Card.Body>
-					<Card.Title>
-						<li style={{ listStyleType: "none" }}>
-							{"Name: "}
-							{item.firstName} {item.lastName}
-						</li>
-					</Card.Title>
-					<Card.Text>
-						<li style={{ listStyleType: "none" }}>
-							{"Bio: "} {item.bio}
-						</li>
-						<li style={{ listStyleType: "none" }}>
-							{"Stream: "} {"C# Dev"}
-						</li>
-						<Button
-							variant="dark"
-							style={{ marginTop: "1rem" }}
-							href={item.cvLink + "&download=1"}
-						>
-							Download CV
-						</Button>{" "}
-					</Card.Text>
-				</Card.Body>
-			</Card>
+			<Row>
+				<Col>
+					<Card
+						className="mt-2"
+						bg="dark"
+						text="light"
+						style={{ alignItems: "center", width: "35rem" }}
+					>
+						<Card.Img
+							className="Image"
+							variant="top"
+							src={"/Pics/" + item.firstName + "_" + item.lastName + ".jpg"}
+						/>
+						<Card.Body>
+							<Card.Title>
+								<li style={{ listStyleType: "none" }}>
+									{"Name: "}
+									{item.firstName} {item.lastName}
+								</li>
+							</Card.Title>
+							<Card.Text>
+								<li style={{ listStyleType: "none" }}>
+									{"Stream: "} {"C# Dev"}
+								</li>
+								<Button
+									variant="light"
+									style={{ marginTop: "1rem" }}
+									href={item.cvLink + "&download=1"}
+								>
+									Download CV
+								</Button>{" "}
+							</Card.Text>
+						</Card.Body>
+					</Card>
+				</Col>
+				<Col>
+					<li className="list" style={{ listStyleType: "none" }}>
+						{"Bio: "} {item.bio}
+					</li>
+				</Col>
+			</Row>
 		);
 	}
 }

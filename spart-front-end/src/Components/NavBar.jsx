@@ -18,10 +18,13 @@ class NavBar extends React.Component {
 		};
 	}
 
-	render() {
-		const list = this.props.handleList;
+	componentDidMount = () => {
+		this.setState({
+			list: this.props.handleList
+		});
+	};
 
-		console.log(list);
+	render() {
 		return (
 			<div>
 				<Navbar bg="dark" expand="lg">
@@ -50,7 +53,8 @@ class NavBar extends React.Component {
 						</ButtonGroup>
 						<Form className="pull-right inline">
 							<FormControl
-								type="input"
+								type="text"
+								onChange={this.props.TriggerListChange}
 								placeholder="Search"
 								className="mr-sm-2"
 							/>

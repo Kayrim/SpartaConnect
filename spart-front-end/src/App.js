@@ -8,9 +8,10 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			items: [],
+			tempItems: [],
 			isLoaded: false
 		};
-		this.updateList = this.updateList.bind(this);
+		this.updateFilter = this.updateFilter.bind(this);
 	}
 
 	componentDidMount() {
@@ -19,6 +20,7 @@ class App extends React.Component {
 			.then(json => {
 				this.setState({
 					items: json,
+					tempItems: json,
 					isLoaded: true
 				});
 			})
@@ -27,25 +29,47 @@ class App extends React.Component {
 			});
 	}
 
-	updateList(newList) {
-		this.setState({ items: newList });
+	updateFilter(e) {
+		// Variable to hold the original version of the list
+		let currentList = [];
+		// Variable to hold the filtered list before putting into state
+		let newList = [];
+
+		// If the search bar isn't empty
+		if (e.target.value !== "") {
+			// Assign the original list to currentList
+			currentList = this.state.items;
+
+			newList = currentList.filter(item => {
+				const lc = item.firstName.toLowerCase();
+				const filter = e.target.value.toLowerCase();
+				return lc.includes(filter);
+			});
+		} else {
+			newList = this.state.items;
+		}
+
+		this.setState({
+			tempItems: newList
+		});
 	}
 
 	render() {
 		const list = this.state.items;
+		const filteredList = this.state.tempItems;
 
 		return (
 			<div>
-				<NavBar handleList={list} TriggerListChange={this.updateList} />
-				{list.map(item => (
-					<Container key={item.consultantId}>
-						<Row className="mx-auto my-4">
-							<Col>
+				<NavBar handleList={list} TriggerListChange={this.updateFilter} />
+				{filteredList.map(item => (
+					<Container className="bg-dark" key={item.consultantId}>
+						<Row className=" my-4">
+							<Col md=" float-left">
 								<video width="600" height="350" controls>
 									<source src="/movie.mp4" type="video/mp4" />
 								</video>
 							</Col>
-							<Col>
+							<Col md="float-right">
 								<ConsultantCard handleStudents={item} />
 							</Col>
 						</Row>
