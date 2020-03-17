@@ -17,7 +17,7 @@ In our sprint planning, we split up into teams to help us attack this task corre
 ## Sprint 1 Actual
 We set ourselves a timeframe of 5pm (16/03/20) - 10am (17/03/20) to complete this sprint, where team 1 would start the MVC page with correct layout but no functionality, and team 2 would do the same but in React. We used the requirements to guide us and create a product to show the product owner at the end of this sprint, to ensure we are heading in the right direction.
 
-## Sprint Review
+## Sprint 1 Review
 
 We created the database, after writing out an SQL query to create our initial database. We then scaffolded our DB context to create our model classes, as well as add controllers to help us view, edit and delete data from the database. In addition to this, we edited the according files so that we could load an initial page when running a project, and pushed everything back up to Github as our first iteration.
 
