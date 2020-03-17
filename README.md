@@ -34,7 +34,15 @@ We set ourselves a timeframe of 5pm (16/03/20) - 10am (17/03/20) to complete thi
 Team 1 would start the MVC page with correct layout but no functionality, and team 2 would do the same but in React. We used the requirements to guide us and create a product to show the product owner at the end of this sprint, to ensure we are heading in the right direction.
 
 ## Sprint 1 Review
-On communication with the product owner, our feedback indicated we were on the right track. After showing the product owner 2 MVP's, which looked and were made with different coding languages. The feedback for the MVC side was good functionality, however the layout provided 
+On communication with the product owner, our feedback indicated we were on the right track. After showing the product owner 2 MVP's, with varying functionality and layout. The feedback for the MVC side was good functionality, however the layout provided was clunky and did not match his idea of 'card' layouts. The React side had a very clean layout, lacking the functionality in the search bar. In conclusion, the feedback helped us come to a decision that we would combine the functionality from the MVC search bar and the React front end to produce the ideal product. Overall, our sprint 1 was a success and we now have improvements which we can carry into sprint 2. 
+
+## Sprint 1 Retrospective
+### What went well:
+Created a MVP to show the product owner.
+### What we could've done better:
+Follow the User Stories in a more methodical manner.
+### Next sprint improvements:
+User Stories 
 
 ## Getting Started
 
