@@ -1,3 +1,17 @@
+- [SpartaWebApp](#spartawebapp)
+    + [Sprint Log](#sprint-log)
+  * [Sprint 0](#sprint-0)
+  * [Sprint 1 Planning](#sprint-1-planning)
+  * [Sprint 1 Actual](#sprint-1-actual)
+  * [Sprint 1 Review](#sprint-1-review)
+  * [Getting Started](#getting-started)
+    + [Prerequisites](#prerequisites)
+  * [Running the tests](#running-the-tests)
+  * [Deployment](#deployment)
+  * [Built With](#built-with)
+  * [Authors](#authors)
+  * [License](#license)
+  
 # SpartaWebApp
 
 A sparta themed web application which contains pages for student user profiles and their corresponding trainers.
