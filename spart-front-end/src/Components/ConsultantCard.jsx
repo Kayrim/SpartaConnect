@@ -10,7 +10,7 @@ class ConsultantCard extends React.Component {
 				<Row>
 					<Col className="col1">
 						<Card.Img
-							className="Image rounded"
+							className="Image"
 							src={"/Pics/" + item.firstName + "_" + item.lastName + ".jpg"}
 						/>
 						<Card.Body className="Body">
