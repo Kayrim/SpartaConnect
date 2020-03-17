@@ -1,23 +1,28 @@
+#Contents
 - [SpartaWebApp](#spartawebapp)
-    + [Sprint Log](#sprint-log)
+- [Sprint Log](#sprint-log)
   * [Sprint 0](#sprint-0)
   * [Sprint 1 Planning](#sprint-1-planning)
   * [Sprint 1 Actual](#sprint-1-actual)
   * [Sprint 1 Review](#sprint-1-review)
-  * [Getting Started](#getting-started)
+  * [Sprint 1 Retrospective](#sprint-1-retrospective)
+    + [What went well:](#what-went-well-)
+    + [What we could've done better:](#what-we-could-ve-done-better-)
+    + [Next sprint improvements:](#next-sprint-improvements-)
+- [Getting Started](#getting-started)
     + [Prerequisites](#prerequisites)
-  * [Running the tests](#running-the-tests)
-  * [Deployment](#deployment)
-  * [Built With](#built-with)
-  * [Authors](#authors)
-  * [License](#license)
-  
+- [Running the tests](#running-the-tests)
+- [Deployment](#deployment)
+- [Built With](#built-with)
+- [Authors](#authors)
+- [License](#license)
+
 # SpartaWebApp
 
 A sparta themed web application which contains pages for student user profiles and their corresponding trainers.
 Comprised of data held in an ASP.NET API back-end with React used to build the user interface to interact with the data.
 
-### Sprint Log
+# Sprint Log
 ## Sprint 0
 We started off sprint 0 with our initial planning, which consisted of requirement gathering, Database relationship planning using LucidChart and creating User Stories through epics and features that were to be included. We used a *Github Project board* to group our user stories according to the user requirement.
 
@@ -44,7 +49,7 @@ Follow the User Stories in a more methodical manner.
 ### Next sprint improvements:
 User Stories 
 
-## Getting Started
+# Getting Started
 
 Clone the project from github and run the SQL query to create the SpartaDB.
 
@@ -52,19 +57,19 @@ Clone the project from github and run the SQL query to create the SpartaDB.
 
 Visual Studio 2017+
 
-## Running the tests
+# Running the tests
 
 Explain how to run the automated tests for this system
 
-## Deployment
+# Deployment
 
 Web application will be deploted on onto netlify.
 
-## Built With
+# Built With
 
 * [React](https://reactjs.org/) - The JavaScript library used.
 
-## Authors
+# Authors
 
 * **Stephen Callum** [Github](https://github.com/Stephen-Callum)
 * **Karim Bakkali** [Github](https://github.com/Kayrim)
@@ -74,6 +79,6 @@ Web application will be deploted on onto netlify.
 * **Hassan** [Github](https://github.com/)
 * **Timothy Wong** [Github](https://github.com/tim8642)
 
-## License
+# License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
