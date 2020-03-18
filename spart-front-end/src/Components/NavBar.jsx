@@ -5,7 +5,6 @@ import {
 	Form,
 	FormControl,
 	ButtonGroup,
-	Dropdown,
 	Button,
 	DropdownButton
 } from "react-bootstrap";
@@ -39,16 +38,29 @@ class NavBar extends React.Component {
 					</Nav>
 					<Nav>
 						<ButtonGroup>
-							<Button>SDET</Button>
-							<Button>BA</Button>
+							<Button onClick={this.props.TriggerFilterChange} value="DevOps">
+								DevOps
+							</Button>
+							<Button onClick={this.props.TriggerFilterChange} value="BA">
+								BA
+							</Button>
 							<DropdownButton
 								as={ButtonGroup}
 								title="Dev"
 								id="bg-nested-dropdown"
 							>
-								<Dropdown.Item eventKey="1">All</Dropdown.Item>
-								<Dropdown.Item eventKey="2">C#</Dropdown.Item>
-								<Dropdown.Item eventKey="3">Java</Dropdown.Item>
+								<Button
+									onClick={this.props.TriggerFilterChange}
+									value="Developer"
+								>
+									All
+								</Button>
+								<Button onClick={this.props.TriggerFilterChange} value="C#">
+									C#
+								</Button>
+								<Button onClick={this.props.TriggerFilterChange} value="Java">
+									Java
+								</Button>
 							</DropdownButton>
 						</ButtonGroup>
 						<Form className="pull-right inline">

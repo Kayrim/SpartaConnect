@@ -17,6 +17,9 @@ namespace SpartaConnect_API.Models
         public string Photo { get; set; }
         public string Bio { get; set; }
         public string University { get; set; }
+        public string Degree { get; set; }
+        public string Grade { get; set; }
+        public string Stream { get; set; }
         public string CvLink { get; set; }
         public string VideoLink { get; set; }
 

@@ -10,9 +10,12 @@ class App extends React.Component {
 		this.state = {
 			items: [],
 			tempItems: [],
+			isStreamFiltered: false,
+			isNameFiltered: false,
 			isLoaded: false
 		};
 		this.updateFilter = this.updateFilter.bind(this);
+		this.updateFilterByStream = this.updateFilterByStream.bind(this);
 	}
 
 	componentDidMount() {
@@ -55,13 +58,42 @@ class App extends React.Component {
 		});
 	}
 
+	updateFilterByStream(e) {
+		// Variable to hold the original version of the list
+		let currentList = [];
+		// Variable to hold the filtered list before putting into state
+		let newList = [];
+
+		// If the search bar isn't empty
+		if (e.target.value !== "") {
+			// Assign the original list to currentList
+			currentList = this.state.items;
+
+			newList = currentList.filter(item => {
+				const lc = item.stream.toLowerCase();
+				const filter = e.target.value.toLowerCase();
+				return lc.includes(filter);
+			});
+		} else {
+			newList = this.state.items;
+		}
+
+		this.setState({
+			tempItems: newList
+		});
+	}
+
 	render() {
 		const list = this.state.items;
 		const filteredList = this.state.tempItems;
 
 		return (
 			<div>
-				<NavBar handleList={list} TriggerListChange={this.updateFilter} />
+				<NavBar
+					handleList={list}
+					TriggerFilterChange={this.updateFilterByStream}
+					TriggerListChange={this.updateFilter}
+				/>
 				{filteredList.map(item => (
 					<Container
 						className="Container my-5"
