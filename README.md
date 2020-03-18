@@ -1,12 +1,12 @@
 #Contents
 - [SpartaWebApp](#spartawebapp)
 - [Daily Standup Log]
-  * [Standup 1]
-  * [Standup 2]
+  * [Standup 1](#standup-1)
+  * [Standup 2](#standup-2)
     + [What we did yesterday:](#what-we-did-yesterday-)
     + [What we will do today:](#what-we-will-do-today-)
     + [Blockers:](#blockers-)
-  * [Standup 3]
+  * [Standup 3](#standup-3)
     + [What we did yesterday:](#what-we-did-yesterday-)
     + [What we will do today:](#what-we-will-do-today-)
     + [Blockers:](#blockers-)
