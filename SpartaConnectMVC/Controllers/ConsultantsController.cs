@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SpartaConnect_API.Models;
 using SpartaConnectMVC.Models;
+using Newtonsoft.Json;
 
 namespace SpartaConnectMVC.Controllers
 {
@@ -18,40 +20,61 @@ namespace SpartaConnectMVC.Controllers
         {
             _context = context;
         }
+        static Uri url = new Uri("http://localhost:56767/api/Consultants");
 
-        
         // GET: Consultants
-       /* public async Task<IActionResult> Index()
-        {          
-            return View(await _context.Consultant.ToListAsync());
-        }*/
-
-        // Get: Consultants based of Search criteria
-        public async Task<IActionResult> Index(string searching)
+        /* public async Task<IActionResult> Index()
+         {          
+             return View(await _context.Consultant.ToListAsync());
+         }*/
+        public async Task<IActionResult> Index(string input)
         {
-            var spartaDBContext = _context.Consultant.Where(x => x.FirstName.Contains(searching) || x.LastName.Contains(searching) || searching == null);
-            return View(await spartaDBContext.ToListAsync());
+            using (var client = new HttpClient())
+            {
+                var jsonstring = await client.GetStringAsync(url);
+                var jsonresult = JsonConvert.DeserializeObject<List<Consultant>>(jsonstring);
+                if (input == null)
+                {
+                    return View(jsonresult);
+                }
+                var result = jsonresult.Where(x => x.FirstName.Contains(input) || x.LastName.Contains(input) || input == null);
+                return View(result);
+            }
         }
-        public async Task<IActionResult> GetFilterDeveloper()
+        public async Task<IActionResult> GetFilterResults(string stream)
         {
-            var developers = _context.Consultant.Where(x => x.Stream.Contains("Developer"));
-            return View("index", await developers.ToListAsync());
+            using (var client = new HttpClient())
+            {
+                var jsonstring = await client.GetStringAsync(url);
+                var jsonresult = JsonConvert.DeserializeObject<List<Consultant>>(jsonstring);
+                var result = jsonresult.Where(x => x.Stream.Contains(stream));
+                if (result == null || stream == null)
+                {
+                    return NotFound();
+                }
+                return View("index", result);
+            }
         }
-        public async Task<IActionResult> GetFilterSDET()
-        {
-            var developers = _context.Consultant.Where(x => x.Stream.Contains("SDET"));
-            return View("index", await developers.ToListAsync());
-        }
-        public async Task<IActionResult> GetFilterBA()
-        {
-            var developers = _context.Consultant.Where(x => x.Stream.Contains("BA"));
-            return View("index", await developers.ToListAsync());
-        }
-        public async Task<IActionResult> GetFilterDevOps()
-        {
-            var developers = _context.Consultant.Where(x => x.Stream.Contains("DevOps"));
-            return View("index", await developers.ToListAsync());
-        }
+        //public async Task<IActionResult> GetFilterResults(string stream)
+        //{
+        //    var developers = _context.Consultant.Where(x => x.Stream.Contains(stream));
+        //    return View("index", await developers.ToListAsync());
+        //}
+        //public async Task<IActionResult> GetFilterSDET()
+        //{
+        //    var developers = _context.Consultant.Where(x => x.Stream.Contains("SDET"));
+        //    return View("index", await developers.ToListAsync());
+        //}
+        //public async Task<IActionResult> GetFilterBA()
+        //{
+        //    var developers = _context.Consultant.Where(x => x.Stream.Contains("BA"));
+        //    return View("index", await developers.ToListAsync());
+        //}
+        //public async Task<IActionResult> GetFilterDevOps()
+        //{
+        //    var developers = _context.Consultant.Where(x => x.Stream.Contains("DevOps"));
+        //    return View("index", await developers.ToListAsync());
+        //}
 
 
         // GET: Consultants/Details/5

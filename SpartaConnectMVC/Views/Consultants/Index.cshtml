@@ -85,12 +85,7 @@
         margin-right:2vw;
     }
 </style>
-@{ 
-    void GetFilterResults()
-    {
 
-    }
-}
 <div class="filter-div">
 
     <h1>Consultants</h1>
@@ -103,16 +98,16 @@
             }
         </li>
         <li class="filter-item">
-            <input type="button" class="btn btn-primary" value="Developer" onclick="location.href='@Url.Action("GetFilterDeveloper", "Consultants")'" />
+            <input type="button" class="btn btn-primary" value="Developer" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new {stream = "Developer"})'" />
         </li>
         <li class="filter-item">
-            <input type="button" class="btn btn-primary" value="DevOps" onclick="location.href='@Url.Action("GetFilterDevOps", "Consultants")'" />
+            <input type="button" class="btn btn-primary" value="DevOps" onclick="location.href='@Url.Action("GetFilterResults", "Consultants")'" />
         </li>
         <li class="filter-item">
-            <input type="button" class="btn btn-primary" value="BA" onclick="location.href='@Url.Action("GetFilterBA", "Consultants")'" />
+            <input type="button" class="btn btn-primary" value="BA" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "BA" })'" />
         </li>
         <li class="filter-item">
-            <input type="button" class="btn btn-primary" value="SDET" onclick="location.href='@Url.Action("GetFilterSDET", "Consultants")'" />
+            <input type="button" class="btn btn-primary" value="SDET" onclick="location.href='@Url.Action("GetFilterResults", "Consultants")'" />
         </li>
         <li class="filter-item">
             <input type="button" class="btn btn-primary" value="All" onclick="location.href='@Url.Action("Index", "Consultants")'" />
