@@ -6,12 +6,12 @@ class ConsultantCard extends React.Component {
 	render() {
 		const item = this.props.handleStudents;
 		return (
-			<Card className="Cardface">
+			<Card className="Cardface text-center">
 				<Row>
-					<Col className="col1">
+					<Col xs="5">
 						<Card.Body className="Body">
-							<Card.Title className="card-title">
-								<li>
+							<Card.Title>
+								<li className="card-title">
 									{item.firstName} {item.lastName}
 								</li>
 							</Card.Title>
@@ -20,20 +20,22 @@ class ConsultantCard extends React.Component {
 								src={"/Pics/" + item.firstName + "_" + item.lastName + ".jpg"}
 							/>
 							<Card.Text className="Text">
-								<li>
-									{"Stream: "} {item.stream}
+								<li className="info">
+									<span className="bold">{"Stream: "} </span> {item.stream}
 								</li>
-								<li>
-									{"University: "} {item.university}
+								<li className="info">
+									<span className="bold">{"University: "} </span>
+									{item.university}
 								</li>
-								<li>
-									{"Course: "} {item.degree}
+								<li className="info">
+									<span className="bold">{"Course: "} </span> {item.degree}
 								</li>
-								<li>
-									{"Grade: "} {item.grade}
+								<li className="info">
+									<span className="bold">{"Grade: "} </span> {item.grade}
 								</li>
 								<Button
-									variant="light"
+									className="button-cv"
+									variant="secondary"
 									href={item.cvLink + "&download=1"}
 								>
 									Download CV
@@ -41,7 +43,7 @@ class ConsultantCard extends React.Component {
 							</Card.Text>
 						</Card.Body>
 					</Col>
-					<Col className="col2">
+					<Col className="col-bio" xs={"7"}>
 						<li className="bio" style={{ listStyleType: "none" }}>
 							{item.bio}
 						</li>

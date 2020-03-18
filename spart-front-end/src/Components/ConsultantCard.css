@@ -1,45 +1,69 @@
 .list {
-    color: rgb(255, 255, 255);
-    width: 100%;
-    font-size: 0.95rem;
+	color: rgb(255, 255, 255);
+	width: 100%;
+	font-size: 0.95rem;
 }
 
 .Image {
-    background-color: rgb(90, 90, 90);
-    width: 100% !important;
-    height: 100%;
-    float: left;
-    object-fit: cover;
+	background-color: rgb(90, 90, 90);
+	width: 100% !important;
+	height: 100%;
+	float: left;
+	object-fit: cover;
 }
 
 .Cardface {
-    width: fit-content;
-    border-style: none !important;
-    background-color: rgb(90, 90, 90);
+	width: fit-content;
+	border-style: none !important;
+	background-color: rgb(90, 90, 90);
 }
 
 .Body {
-    background-color: rgb(90, 90, 90);
-    align-content: center;
+	background-color: rgb(90, 90, 90);
+	align-content: center;
 }
 
 .Text {
-    flex: auto;
+	flex: auto;
 
-    align-content: center;
-    background-color: rgb(90, 90, 90);
+	align-content: center;
+	background-color: rgb(90, 90, 90);
 }
 
 .card {
-    background-color: rgb(90, 90, 90) !important;
+	background-color: rgb(90, 90, 90) !important;
 }
-
-.col1 {
-    align-content: center;
-}
-
-.col {}
 
 .row {
-    border: 5px slategray !important;
+	border: 5px slategray !important;
+}
+
+li {
+	list-style: none;
+	color: white;
+	font-size: 1.2vw;
+}
+.info {
+	line-height: 1.5em;
+	font-size: 1.2vw;
+}
+
+.col-bio {
+	text-align: justify;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.card-title {
+	font-size: 2vw;
+}
+
+.button-cv {
+	margin-top: 2vh;
+	border-radius: 7%;
+	font-size: 0vmax;
+	max-width: 100%;
+}
+.bold {
+	font-weight: bold;
 }

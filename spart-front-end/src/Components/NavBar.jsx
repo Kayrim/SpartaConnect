@@ -8,6 +8,7 @@ import {
 	Button,
 	DropdownButton
 } from "react-bootstrap";
+import "./NavBar.css";
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar>
+				<Navbar expand="lg" className="justify-content-between bg-dark">
 					<Nav className="logo">
 						<Navbar.Brand color="white">
 							<img
@@ -39,30 +40,52 @@ class NavBar extends React.Component {
 					<h3 className="title">Sparta Connect</h3>
 					<Nav className="filter">
 						<ButtonGroup>
-							<Button onClick={this.props.TriggerFilterChange} value="">
+							<Button
+								variant="secondary"
+								onClick={this.props.TriggerFilterChange}
+								value=""
+							>
 								All
 							</Button>
-							<Button onClick={this.props.TriggerFilterChange} value="DevOps">
+							<Button
+								variant="secondary"
+								onClick={this.props.TriggerFilterChange}
+								value="DevOps"
+							>
 								DevOps
 							</Button>
-							<Button onClick={this.props.TriggerFilterChange} value="BA">
+							<Button
+								variant="secondary"
+								onClick={this.props.TriggerFilterChange}
+								value="BA"
+							>
 								BA
 							</Button>
 							<DropdownButton
 								as={ButtonGroup}
 								title="Dev"
 								id="bg-nested-dropdown"
+								variant="secondary"
 							>
 								<Button
+									variant="secondary"
 									onClick={this.props.TriggerFilterChange}
 									value="Developer"
 								>
 									All
 								</Button>
-								<Button onClick={this.props.TriggerFilterChange} value="C#">
+								<Button
+									variant="secondary"
+									onClick={this.props.TriggerFilterChange}
+									value="C#"
+								>
 									C#
 								</Button>
-								<Button onClick={this.props.TriggerFilterChange} value="Java">
+								<Button
+									variant="secondary"
+									onClick={this.props.TriggerFilterChange}
+									value="Java"
+								>
 									Java
 								</Button>
 							</DropdownButton>

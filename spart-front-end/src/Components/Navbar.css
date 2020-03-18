@@ -1,7 +1,6 @@
-.NavBar.title {
-    text-shadow: 4px 6px 9px #e33661;
-    margin-right: auto;
-    color: white;
-    outline: black;
-    outline-width: thick;
+.title {
+	text-shadow: 4px 6px 9px #e33661;
+	color: white;
+	outline: black;
+	outline-width: thick;
 }
