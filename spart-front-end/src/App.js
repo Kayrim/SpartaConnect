@@ -69,7 +69,7 @@ class App extends React.Component {
 						key={item.consultantId}
 					>
 						<Row className="my-2">
-							<Col className="my-auto">
+							<Col className="m-auto">
 								<video width="600" height="350" controls>
 									<source src="/movie.mp4" type="video/mp4" />
 								</video>

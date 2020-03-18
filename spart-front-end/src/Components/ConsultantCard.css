@@ -1,40 +1,45 @@
 .list {
-	color: rgb(255, 255, 255);
-	width: 100%;
-	font-size: 0.95rem;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    font-size: 0.95rem;
 }
 
 .Image {
-	background-color: rgb(90, 90, 90);
-	width: 100%;
-	height: 15vw;
-	float: left;
-	object-fit: scale-down;
+    background-color: rgb(90, 90, 90);
+    width: 100% !important;
+    height: 100%;
+    float: left;
+    object-fit: cover;
 }
 
 .Cardface {
-	width: fit-content;
-	border-style: none !important;
-	background-color: rgb(90, 90, 90);
+    width: fit-content;
+    border-style: none !important;
+    background-color: rgb(90, 90, 90);
 }
-.Body {
-	flex: auto;
-	background-color: rgb(90, 90, 90);
-}
-.Text {
-	flex: auto;
 
-	align-content: center;
-	background-color: rgb(90, 90, 90);
+.Body {
+    background-color: rgb(90, 90, 90);
+    align-content: center;
 }
+
+.Text {
+    flex: auto;
+
+    align-content: center;
+    background-color: rgb(90, 90, 90);
+}
+
 .card {
-	background-color: rgb(90, 90, 90) !important;
+    background-color: rgb(90, 90, 90) !important;
 }
+
 .col1 {
-	width: 10rem;
-	flex-grow: unset !important;
+    align-content: center;
 }
+
+.col {}
 
 .row {
-	border: 5px slategray !important;
+    border: 5px slategray !important;
 }

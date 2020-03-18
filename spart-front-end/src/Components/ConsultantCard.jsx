@@ -9,22 +9,28 @@ class ConsultantCard extends React.Component {
 			<Card className="Cardface">
 				<Row>
 					<Col className="col1">
-						<Card.Img
-							className="Image"
-							src={"/Pics/" + item.firstName + "_" + item.lastName + ".jpg"}
-						/>
+						
+						
 						<Card.Body className="Body">
-							<Card.Title>
+						<Card.Title className="mx-auto">
 								<li className="list" style={{ listStyleType: "none" }}>
 									{item.firstName} {item.lastName}
 								</li>
 							</Card.Title>
+							<Card.Img
+							className="Image"
+							src={"/Pics/" + item.firstName + "_" + item.lastName + ".jpg"}
+						/>
 							<Card.Text className="Text">
 								<li className="list" style={{ listStyleType: "none" }}>
 									{"Stream: "} {"C# Dev"}
 								</li>
 								<li className="list" style={{ listStyleType: "none" }}>
 									{"University: "} {item.university}
+								</li><li className="list" style={{ listStyleType: "none" }}>
+									{"Course: "} {"BSc Computer Science"}
+								</li><li className="list" style={{ listStyleType: "none" }}>
+									{"Grade: "} {"2.1"}
 								</li>
 								<Button
 									variant="light"
