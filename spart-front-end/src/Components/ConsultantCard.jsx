@@ -10,8 +10,8 @@ class ConsultantCard extends React.Component {
 				<Row>
 					<Col className="col1">
 						<Card.Body className="Body">
-							<Card.Title className="mx-auto">
-								<li className="list" style={{ listStyleType: "none" }}>
+							<Card.Title className="card-title">
+								<li>
 									{item.firstName} {item.lastName}
 								</li>
 							</Card.Title>
@@ -20,21 +20,20 @@ class ConsultantCard extends React.Component {
 								src={"/Pics/" + item.firstName + "_" + item.lastName + ".jpg"}
 							/>
 							<Card.Text className="Text">
-								<li className="list" style={{ listStyleType: "none" }}>
+								<li>
 									{"Stream: "} {item.stream}
 								</li>
-								<li className="list" style={{ listStyleType: "none" }}>
+								<li>
 									{"University: "} {item.university}
 								</li>
-								<li className="list" style={{ listStyleType: "none" }}>
+								<li>
 									{"Course: "} {item.degree}
 								</li>
-								<li className="list" style={{ listStyleType: "none" }}>
+								<li>
 									{"Grade: "} {item.grade}
 								</li>
 								<Button
 									variant="light"
-									style={{ marginTop: "1rem" }}
 									href={item.cvLink + "&download=1"}
 								>
 									Download CV
@@ -42,8 +41,8 @@ class ConsultantCard extends React.Component {
 							</Card.Text>
 						</Card.Body>
 					</Col>
-					<Col className="col2 my-auto">
-						<li className="list" style={{ listStyleType: "none" }}>
+					<Col className="col2">
+						<li className="bio" style={{ listStyleType: "none" }}>
 							{item.bio}
 						</li>
 					</Col>

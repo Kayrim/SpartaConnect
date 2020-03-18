@@ -26,8 +26,8 @@ class NavBar extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar bg="dark" expand="lg">
-					<Nav className="mr-auto">
+				<Navbar>
+					<Nav className="logo">
 						<Navbar.Brand color="white">
 							<img
 								src="/Pics/spartaLogo.png"
@@ -36,8 +36,12 @@ class NavBar extends React.Component {
 							/>
 						</Navbar.Brand>
 					</Nav>
-					<Nav>
+					<h3 className="title">Sparta Connect</h3>
+					<Nav className="filter">
 						<ButtonGroup>
+							<Button onClick={this.props.TriggerFilterChange} value="">
+								All
+							</Button>
 							<Button onClick={this.props.TriggerFilterChange} value="DevOps">
 								DevOps
 							</Button>
@@ -68,7 +72,6 @@ class NavBar extends React.Component {
 								type="text"
 								onChange={this.props.TriggerListChange}
 								placeholder="Search"
-								className="mr-sm-2"
 							/>
 						</Form>
 					</Nav>
