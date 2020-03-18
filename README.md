@@ -1,5 +1,15 @@
 #Contents
 - [SpartaWebApp](#spartawebapp)
+- [Daily Standup Log]
+  * [Standup 1]
+  * [Standup 2]
+    + [What we did yesterday:](#what-we-did-yesterday-)
+    + [What we will do today:](#what-we-will-do-today-)
+    + [Blockers:](#blockers-)
+  * [Standup 3]
+    + [What we did yesterday:](#what-we-did-yesterday-)
+    + [What we will do today:](#what-we-will-do-today-)
+    + [Blockers:](#blockers-)
 - [Sprint Log](#sprint-log)
   * [Sprint 0](#sprint-0)
   * [Sprint 1 Planning](#sprint-1-planning)
@@ -21,6 +31,27 @@
 
 A sparta themed web application which contains pages for student user profiles and their corresponding trainers.
 Comprised of data held in an ASP.NET API back-end with React used to build the user interface to interact with the data.
+
+# Daily Standup Log
+## Standup 1
+Our first standup consisted of laying out our plan for the day, which was to create the database, as well as make the API so that we could read data off of the API rather than directly from the database
+
+## Standup 2
+### What we did yesterday
+We created the database and API as a template, to prepare us for today.
+### What we will do today
+We will split into 2 teams, where one will work on a React front end and the other will work on an MVC front end (Razor).
+Both teams have a similar plan, where we will both work on the layout of the page, add actual information rather than placeholder information to each bio and add a search bar and some filter buttons without functionality.
+### Blockers
+No blockers from yesterday
+
+## Standup 3
+### What we did yesterday
+Yesterday was a sucessful day for both groups. Both teams completed the majority of the work planned to be completed by today, which indicated we are working at a good pace. Both teams have a layout (slightly differing from each other but mainly the same). Both teams have also managed to get a search bar, with partial functionality as well as being able to filter through streams showing only people of the chosen stream. In addition to this, we have real information per bio.
+### What we will do today
+Today we will finish off design, and get the front end reading off of the API, rather than the database. We will finish functionality of search bar and buttons, complete any extra information from requirements and attempt to finish up a potential finihsed product by the next stand up, leaving only a final polish.
+### Blockers
+Knowledge of css libraries are slowing progress, in both groups but not causing major issues, just prolonging the completion of the project
 
 # Sprint Log
 ## Sprint 0
