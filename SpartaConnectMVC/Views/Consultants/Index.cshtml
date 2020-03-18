@@ -11,6 +11,10 @@
     <input type="submit" value="Search" />
 }
 
+
+
+
+
 <style>
     .card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -28,13 +32,46 @@
         padding: 20px 16px;
         margin-left: 20px;
     }
+
     .content-main{
         list-style-type: none;      
     }
     .content-item{
         font-size: 1.3em;
+        margin-bottom: 9px;
+        margin-left :-71px;
+        margin-top : 18px;
     }
+
+     .content-item2{
+        font-size: 1.3em;
+        margin-bottom: 9px;
+        margin-left :-56px;
+        margin-top : 10px;
+        word-wrap:break-word;
+        float:right; 
+     }
+
+
+    .images{
+        transform : rotate(90deg);
+    }
+
+    
+    .header2{
+        margin-right: 223px;
+        float: right;
+        margin-top: -483px;
+    }
+
+
+   
+
+    
 </style>
+
+
+
 
         @if (Model.Count() == 0)
         {
@@ -50,32 +87,81 @@
             foreach (var item in Model)
             {
                 string imagePath = $"img/{item.FirstName}_{item.LastName}.jpg"; 
+                
+                
                 <div class="card">
-                    <img src=@imagePath alt="4" width="200" height="200" />
-                    <div class="container">
-                        <h4>
+
+
+                    <div class="div1">
+
+                        <h4 class="header1">
                             <b>
                                 @Html.DisplayFor(modelItem => item.FirstName)
                                 @Html.DisplayFor(modelItem => item.LastName)
                             </b>
                         </h4>
-                        <ul class="content-main">
-                            <a href="@Html.DisplayFor(modelItem => item.CvLink) + &download=1">
-                            <li class="content-item">CV Download</li></a>
-                            <li class="content-item">
-                                University: @Html.DisplayFor(modelItem => item.University)
-                            </li>
-                            <li class="content-item">
-                                @Html.DisplayFor(modelItem => item.Course.CourseName)
-                            </li>
-                            <li class="content-item">
-                                @Html.DisplayFor(modelItem => item.Bio)
-                            </li>                         
-                        </ul>
+
+                        <img src=@imagePath alt="4" width="200" height="200" class="images" />
+
+                        <div class="container">
+                            <ul class="content-main">
+
+                                <li class="content-item">
+                                    University: @Html.DisplayFor(modelItem => item.University)
+                                </li>
+                                <li class="content-item">
+                                    Degree: @Html.DisplayFor(modelItem => item.Degree)
+                                </li>
+                                <li class="content-item">
+                                    Grade: @Html.DisplayFor(modelItem => item.Grade)
+                                </li>
+                                <a href="@Html.DisplayFor(modelItem => item.CvLink) + &download=1">
+                                    <li class="content-item">CV Download</li>
+                                </a>
+
+                            </ul>
+                        </div>
+
+
+                        <div class="div2">
+
+                            <h4 class="header2">
+                                <b>
+                                    Bio
+                                </b>
+                            </h4>
+
+                            <div class="container">
+
+                                <ul class="content-main">
+                                    <li class="content-item2">
+                                       @Html.DisplayFor(modelItem => item.Bio)
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+
                     </div>
+
+
+
+                    
+
+                     
+                
+                   
+
+
+
+                    
+
+
+                    
                 </div>
             }
-
         }
 
     

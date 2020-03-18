@@ -22,6 +22,15 @@ namespace SpartaConnect_API.Models
         public virtual DbSet<Trainer> Trainer { get; set; }
         public virtual DbSet<TrainerCourses> TrainerCourses { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Initial Catalog=SpartaDB;");
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>(entity =>
@@ -37,9 +46,7 @@ namespace SpartaConnect_API.Models
             {
                 entity.Property(e => e.ConsultantId).HasColumnName("ConsultantID");
 
-                entity.Property(e => e.Bio)
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
+                entity.Property(e => e.Bio).HasColumnType("text");
 
                 entity.Property(e => e.CourseId).HasColumnName("CourseID");
 
@@ -47,8 +54,16 @@ namespace SpartaConnect_API.Models
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Degree)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.FirstName)
                     .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Grade)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.LastName)
@@ -57,6 +72,10 @@ namespace SpartaConnect_API.Models
 
                 entity.Property(e => e.Photo)
                     .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Stream)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.University)
@@ -141,7 +160,7 @@ namespace SpartaConnect_API.Models
             modelBuilder.Entity<TrainerCourses>(entity =>
             {
                 entity.HasKey(e => new { e.CourseId, e.TrainerId })
-                    .HasName("PK__TrainerC__1A4BD03E9149438C");
+                    .HasName("PK__TrainerC__1A4BD03EFC2E8CF4");
 
                 entity.Property(e => e.CourseId).HasColumnName("CourseID");
 
