@@ -21,7 +21,7 @@
         transition: 0.3s;
         padding: 20px 16px;
         margin: 4vh 0 0 3vw;
-        width: 60%;
+        width: 90vw;
     }
 
     .card:hover {
@@ -32,37 +32,53 @@
         padding: 20px 16px;
         margin-left: 20px;
     }
+    .container2{
+        font-size:1.3em;
+    }
 
     .content-main{
         list-style-type: none;      
     }
     .content-item{
         font-size: 1.3em;
-        margin-bottom: 9px;
-        margin-left :-71px;
-        margin-top : 18px;
+        margin-bottom: 1.2vh;
+        margin-top : 2.4vh;
+        margin-right:30vw;
     }
-
-     .content-item2{
-        font-size: 1.3em;
-        margin-bottom: 9px;
-        margin-left :-56px;
-        margin-top : 10px;
-        word-wrap:break-word;
-        float:right; 
-     }
 
 
     .images{
         transform : rotate(90deg);
+        object-fit:scale-down;
+        width:12vw;
+        height:15vh; 
+        margin-top:3vh;
+        margin-left:3vw;
+    }
+    .header1{
+        margin-left:5vw;
+    }
+    .header2{
+        margin-right: 68.5vw;
+        float: right;
+        margin-top: -40vh;
     }
 
-    
-    .header2{
-        margin-right: 223px;
+    .bio-content{
+        margin-left: 18vw;
+        margin-right:40vw;
         float: right;
-        margin-top: -483px;
+        margin-top:-37vh;
     }
+    .title{
+        font-weight:bold;
+    }
+    .div3{
+        margin-left:60vw;
+        display:inline-block;
+    }
+    
+   
 
 
    
@@ -100,20 +116,20 @@
                                 @Html.DisplayFor(modelItem => item.LastName)
                             </b>
                         </h4>
-
-                        <img src=@imagePath alt="4" width="200" height="200" class="images" />
+                        
+                        <img class="images" src=@imagePath alt="4" />
 
                         <div class="container">
                             <ul class="content-main">
-
+                                
                                 <li class="content-item">
-                                    University: @Html.DisplayFor(modelItem => item.University)
+                                    <span class="title">University:</span> @Html.DisplayFor(modelItem => item.University)
                                 </li>
                                 <li class="content-item">
-                                    Degree: @Html.DisplayFor(modelItem => item.Degree)
+                                    <span class="title">Degree:</span> @Html.DisplayFor(modelItem => item.Degree)
                                 </li>
                                 <li class="content-item">
-                                    Grade: @Html.DisplayFor(modelItem => item.Grade)
+                                    <span class="title">Grade:</span> @Html.DisplayFor(modelItem => item.Grade)
                                 </li>
                                 <a href="@Html.DisplayFor(modelItem => item.CvLink) + &download=1">
                                     <li class="content-item">CV Download</li>
@@ -131,16 +147,13 @@
                                 </b>
                             </h4>
 
-                            <div class="container">
-
-                                <ul class="content-main">
-                                    <li class="content-item2">
-                                       @Html.DisplayFor(modelItem => item.Bio)
-                                    </li>
-                                </ul>
-
+                            <div class="container2">
+                                <p class="bio-content">@Html.DisplayFor(modelItem => item.Bio)</p>
                             </div>
 
+                        </div>
+                        <div class="div3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/y881t8ilMyc" frameborder="0" allowfullscreen></iframe>
                         </div>
 
 

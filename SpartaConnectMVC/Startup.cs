@@ -53,7 +53,7 @@ namespace SpartaConnectMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Consultants}/{action=Index}/{id?}");
             });
         }
     }
