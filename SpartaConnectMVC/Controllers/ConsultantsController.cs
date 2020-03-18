@@ -29,26 +29,30 @@ namespace SpartaConnectMVC.Controllers
         // Get: Consultants based of Search criteria
         public async Task<IActionResult> Index(string searching)
         {
-            //List<ConsultantViewModel> consultants = new List<ConsultantViewModel>();
-            var spartaDBContext = _context.Consultant.Where(x => x.FirstName.StartsWith(searching) || searching == null);
-            //foreach (var consultant in spartaDBContext)
-            //{
-            //    consultants.Add(new ConsultantViewModel
-            //    {
-            //        ConsultantId = consultant.ConsultantId,
-            //        FirstName = consultant.FirstName,
-            //        LastName = consultant.LastName,
-            //        Photo = consultant.Photo,
-            //        Bio = consultant.Bio,
-            //        CvLink = consultant.CvLink,
-            //        University = consultant.University,
-            //        VideoLink = consultant.VideoLink,
-            //        CourseName = consultant.Course.CourseName
-            //    });
-            //}
+            var spartaDBContext = _context.Consultant.Where(x => x.FirstName.Contains(searching) || x.LastName.Contains(searching) || searching == null);
             return View(await spartaDBContext.ToListAsync());
         }
-        
+        public async Task<IActionResult> GetFilterDeveloper()
+        {
+            var developers = _context.Consultant.Where(x => x.Stream.Contains("Developer"));
+            return View("index", await developers.ToListAsync());
+        }
+        public async Task<IActionResult> GetFilterSDET()
+        {
+            var developers = _context.Consultant.Where(x => x.Stream.Contains("SDET"));
+            return View("index", await developers.ToListAsync());
+        }
+        public async Task<IActionResult> GetFilterBA()
+        {
+            var developers = _context.Consultant.Where(x => x.Stream.Contains("BA"));
+            return View("index", await developers.ToListAsync());
+        }
+        public async Task<IActionResult> GetFilterDevOps()
+        {
+            var developers = _context.Consultant.Where(x => x.Stream.Contains("DevOps"));
+            return View("index", await developers.ToListAsync());
+        }
+
 
         // GET: Consultants/Details/5
         public async Task<IActionResult> Details(int? id)

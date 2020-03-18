@@ -3,16 +3,11 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Consultants</h1>
-@using (Html.BeginForm("Index", "Consultants", FormMethod.Get))
-{
-    @Html.TextBox("searching")
-    <input type="submit" value="Search" />
-}
+    
 
 
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
 <style>
@@ -22,12 +17,11 @@
         padding: 20px 16px;
         margin: 4vh 0 0 3vw;
         width: 90vw;
+        height: auto;
     }
-
     .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
     }
-
     .container {
         padding: 20px 16px;
         margin-left: 20px;
@@ -35,7 +29,6 @@
     .container2{
         font-size:1.3em;
     }
-
     .content-main{
         list-style-type: none;      
     }
@@ -43,121 +36,166 @@
         font-size: 1.3em;
         margin-bottom: 1.2vh;
         margin-top : 2.4vh;
-        margin-right:30vw;
+        margin-right:37.5vw;
+        margin-left:-1vw;
     }
-
-
     .images{
         transform : rotate(90deg);
         object-fit:scale-down;
         width:12vw;
         height:15vh; 
         margin-top:3vh;
-        margin-left:3vw;
+        margin-left:0.7vw;
     }
     .header1{
-        margin-left:5vw;
+        margin-left:2.7vw;
     }
     .header2{
-        margin-right: 68.5vw;
+        margin-right: 66.6vw;
         float: right;
-        margin-top: -40vh;
+        margin-top: -47vh;
     }
-
     .bio-content{
-        margin-left: 18vw;
-        margin-right:40vw;
+        margin-left: 20vw;
+        margin-right:33vw;
         float: right;
-        margin-top:-37vh;
+        margin-top: -43vh;
     }
     .title{
         font-weight:bold;
     }
-    .div3{
-        margin-left:60vw;
+    .div3 {
+        margin-left: 60vw;
+        margin-top: -45vh;
+        margin-right: 3vw;
+        float: right;
+    }
+    .filter-div{
         display:inline-block;
     }
-    
-   
-
-
-   
-
-    
+    .filter-bar{
+        list-style-type:none;
+    }
+    .filter-item{
+        display:inline-block;
+        padding: 3px 3px 3px 3px;
+    }
+    .filter-item1{
+        display:inline-block;
+        margin-right:2vw;
+    }
 </style>
+@{ 
+    void GetFilterResults()
+    {
 
+    }
+}
+<div class="filter-div">
 
-
-
-        @if (Model.Count() == 0)
-        {
-            <tr>
-                <td colspan="3" style="color:red">
-                    No Match To Any Documents
-                </td>
-
-            </tr>
-        }
-        else
-        {
-            foreach (var item in Model)
+    <h1>Consultants</h1>
+    <ul class="filter-bar">
+        <li class="filter-item1">
+            @using (Html.BeginForm("Index", "Consultants", FormMethod.Get))
             {
-                string imagePath = $"img/{item.FirstName}_{item.LastName}.jpg"; 
+                @Html.TextBox("searching")
+                <input class="btn btn-secondary" type="submit" value="Search" />
+            }
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="Developer" onclick="location.href='@Url.Action("GetFilterDeveloper", "Consultants")'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="DevOps" onclick="location.href='@Url.Action("GetFilterDevOps", "Consultants")'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="BA" onclick="location.href='@Url.Action("GetFilterBA", "Consultants")'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="SDET" onclick="location.href='@Url.Action("GetFilterSDET", "Consultants")'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="All" onclick="location.href='@Url.Action("Index", "Consultants")'" />
+        </li>
+    </ul>
+    
+  
+
+
+</div>
+
+@if (Model.Count() == 0)
+{
+    <tr>
+        <td colspan="3" style="color:red">
+            No Match To Any Documents
+        </td>
+
+    </tr>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        string imagePath = $"img/{item.FirstName}_{item.LastName}.jpg"; 
                 
                 
-                <div class="card">
+        <div class="card">
 
 
-                    <div class="div1">
+            <div class="div1">
 
-                        <h4 class="header1">
-                            <b>
-                                @Html.DisplayFor(modelItem => item.FirstName)
-                                @Html.DisplayFor(modelItem => item.LastName)
-                            </b>
-                        </h4>
+                <h4 class="header1">
+                    <b>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </b>
+                </h4>
                         
-                        <img class="images" src=@imagePath alt="4" />
+                <img class="images" src=@imagePath alt="4" />
 
-                        <div class="container">
-                            <ul class="content-main">
-                                
-                                <li class="content-item">
-                                    <span class="title">University:</span> @Html.DisplayFor(modelItem => item.University)
-                                </li>
-                                <li class="content-item">
-                                    <span class="title">Degree:</span> @Html.DisplayFor(modelItem => item.Degree)
-                                </li>
-                                <li class="content-item">
-                                    <span class="title">Grade:</span> @Html.DisplayFor(modelItem => item.Grade)
-                                </li>
-                                <a href="@Html.DisplayFor(modelItem => item.CvLink) + &download=1">
-                                    <li class="content-item">CV Download</li>
-                                </a>
+                <div class="container">
+                    <ul class="content-main">
 
-                            </ul>
-                        </div>
+                        <li class="content-item">
+                            <span class="title">University:</span> @Html.DisplayFor(modelItem => item.University)
+                        </li>
+                        <li class="content-item">
+                            <span class="title">Degree:</span> @Html.DisplayFor(modelItem => item.Degree)
+                        </li>
+                        <li class="content-item">
+                            <span class="title">Grade:</span> @Html.DisplayFor(modelItem => item.Grade)
+                        </li>
+                        <li class="content-item">
+                            <span class="title">Stream:</span> @Html.DisplayFor(modelItem => item.Stream)
+                        </li>
+                        <a href="@Html.DisplayFor(modelItem => item.CvLink) + &download=1">
+                            <li class="content-item">CV Download</li>
+                        </a>
 
-
-                        <div class="div2">
-
-                            <h4 class="header2">
-                                <b>
-                                    Bio
-                                </b>
-                            </h4>
-
-                            <div class="container2">
-                                <p class="bio-content">@Html.DisplayFor(modelItem => item.Bio)</p>
-                            </div>
-
-                        </div>
-                        <div class="div3">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/y881t8ilMyc" frameborder="0" allowfullscreen></iframe>
-                        </div>
+                    </ul>
+                </div>
 
 
+                <div class="div2">
+
+                    <h4 class="header2">
+                        <b>
+                            Bio
+                        </b>
+                    </h4>
+
+                    <div class="container2">
+                        <p class="bio-content">@Html.DisplayFor(modelItem => item.Bio)</p>
                     </div>
+
+                </div>
+                <div class="div3">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/y881t8ilMyc" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+
+            </div>
 
 
 
@@ -173,9 +211,9 @@
 
 
                     
-                </div>
-            }
-        }
+        </div>
+    }
+}
 
     
 
