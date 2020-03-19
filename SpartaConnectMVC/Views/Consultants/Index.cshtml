@@ -1,0 +1,227 @@
+﻿@model IEnumerable<SpartaConnect_API.Models.Consultant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<style>
+    .card {
+        box-shadow: 0 0.5vw 1.1vh 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        padding: 2.7vh 1.1vw;
+        margin: 4vh 0 0 0.4vw;
+        width: 90vw;
+        height: auto;
+    }
+    .card:hover {
+        box-shadow: 0 1vw 2.2vh 0 rgba(0,0,0,0.7);
+    }
+    .container {
+        padding: 3.7vh 2vw;
+        margin-left: 2vw;
+    }
+    .container2{
+        font-size:1.3em;
+    }
+    .content-main {
+        list-style-type: none;
+    }
+    .content-item{
+        font-size: 1.3em;
+        margin-bottom: 1.2vh;
+        margin-top : 2.4vh;
+        margin-right:37.5vw;
+        margin-left:-4vw;
+    }
+    .images{
+        transform : rotate(90deg);
+        object-fit:scale-down;
+        width:12vw;
+        height:15vh; 
+        margin-top:3vh;
+        margin-left:-0.3vw;
+    }
+    .header1{
+        margin-left: 1.8vw;
+    }
+    .header2 {
+        margin-right: 66.1vw;
+        float: right;
+        margin-top: -59vh;
+    }
+    .bio-content{
+        margin-left: 19.8vw;
+        margin-right:33vw;
+        float: right;
+        margin-top: -51vh;
+        text-align: justify;
+    }
+    .title {
+        font-weight: bold;
+    }
+    .div3 {
+        margin-left: 60vw;
+        margin-top: -50vh;
+        margin-right: 3vw;
+        float: right;
+    }
+    .filter-div {
+        display: inline-block;
+        margin-left: -1.5vw;
+    }
+    .filter-bar{
+        list-style-type:none;
+    }
+    .filter-item {
+        display: inline-block;
+        padding: 0.2vh 0.2vw 0.2vh 0.2vw;
+    }
+    .filter-item1 {
+        display: inline-block;
+        margin-right: 0;
+        float:right;
+    }
+    .no-match-txt {
+        font-size: 1.5rem;
+        color: red;
+    }
+    .form-input{
+        height: 3.75vh;
+    }
+    .btn-secondary{
+        margin-top: -0.5vh;
+    }
+    .search-form{
+        float: right;
+        margin-right: -67.4vw;
+    }
+    .btn:focus{
+        outline:none !important;
+    }
+    .btn-primary:focus, .btn-primary:hover{
+        background-color: #ef93aa !important;
+        border-color: #ef93aa !important;
+        outline-color: #ef93aa !important;
+    }
+    .btn-primary {
+        background-color: #e33661;
+        border-color: #e33661;
+        outline-color: #e33661;
+    }
+</style>
+
+<div class="filter-div">
+
+    <ul class="filter-bar">
+        <li class="filter-item1">
+            @using (Html.BeginForm("Index", "Consultants", FormMethod.Get, new { @class = "search-form" }))
+            {
+                @Html.TextBox("input", null, new { placeholder = "Search By Name", @class = "form-input" })
+                <input class="btn btn-primary" type="submit" value="Search" />
+            }
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="Developer" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new {stream = "Developer"})'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="DevOps" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "DevOps" })'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="SDET" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "SDET" })'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="Data" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "Data" })'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="BA" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "BA" })'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="All" onclick="location.href='@Url.Action("Index", "Consultants")'" />
+        </li>
+    </ul>
+
+    
+
+
+</div>
+
+@if (Model.Count() == 0)
+{
+    <p class="no-match-txt">No Match To Any Documents</p>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        string imagePath = $@"https://localhost:44301/img/{item.FirstName}_{item.LastName}.jpg";
+        string videoPath = @"https://www.youtube.com/embed/9ps2_2Bq1Ao";
+
+
+    <div class="card">
+
+        <div class="div1">
+
+            <h4 class="header1">
+                <b>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </b>
+            </h4>
+
+            <img class="images" src=@imagePath alt="4" />
+
+            <div class="container">
+
+                <ul class="content-main">
+
+                    <li class="content-item">
+                        <span class="title">University:</span> @Html.DisplayFor(modelItem => item.University)
+                    </li>
+                    <li class="content-item">
+                        <span class="title">Degree:</span> @Html.DisplayFor(modelItem => item.Degree)
+                    </li>
+                    <li class="content-item">
+                        <span class="title">Grade:</span> @Html.DisplayFor(modelItem => item.Grade)
+                    </li>
+                    <li class="content-item">
+                        <span class="title">Stream:</span> @Html.DisplayFor(modelItem => item.Stream)
+                    </li>
+                    <a href="@Html.DisplayFor(modelItem => item.CvLink) + &download=1">
+                        <li class="content-item">Profile Download</li>
+                    </a>
+
+                </ul>
+
+            </div>
+
+            <div class="div2">
+
+                <h4 class="header2">
+                    <b>
+                        Bio
+                    </b>
+                </h4>
+
+                <div class="container2">
+                    <p class="bio-content">@Html.DisplayFor(modelItem => item.Bio)</p>
+                </div>
+
+            </div>
+
+            <div class="div3">
+
+                <iframe width="560" height="315" src=@videoPath frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+        </div>
+
+    </div>
+    }
+}
+
+
+    
+
