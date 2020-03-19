@@ -12,8 +12,8 @@
 .span-baby {
 	background: -webkit-linear-gradient(
 		180deg,
-		rgb(238, 238, 238),
-		rgb(204, 0, 102)
+		rgb(221, 221, 221),
+		rgb(87, 87, 87)
 	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
