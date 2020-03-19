@@ -96,7 +96,14 @@ User Stories
 
 ### React startup instructions
 
-Clone the project from github and run the SQL query to create the SpartaDB.
+1. Clone the project repo from branch: react-frontend
+2. Load up SpartaConnect_API.sln in Visual Studio
+3. View ==> Solution Explorer ==> SpartaConnect_API ==> SQLQUERY.sql
+4. Run Query ==> Choose Server e.g. (localdb)
+5. Open spart-front-end in Visual Code
+6. Build and Run SpartaConnect_API.sln  
+7. Within Visual Code with spart-front-end open access the terminal and input npm start
+8. Press enter to run 
 
 ### Prerequisites
 
