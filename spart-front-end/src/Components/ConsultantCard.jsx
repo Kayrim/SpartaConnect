@@ -8,17 +8,14 @@ class ConsultantCard extends React.Component {
 		return (
 			<Card className="Cardface text-center">
 				<Row>
-					<Col xs="5">
+					<Col className="col-profile" xs="5">
 						<Card.Body className="Body">
 							<Card.Title>
-								<li className="card-title">
+								<li className="card-name">
 									{item.firstName} {item.lastName}
 								</li>
 							</Card.Title>
-							<Card.Img
-								className="Image"
-								src={"/Pics/" + item.firstName + "_" + item.lastName + ".jpg"}
-							/>
+							<Card.Img className="Image" src={item.photoLink} />
 							<Card.Text className="Text">
 								<li className="info">
 									<span className="bold">{"Stream: "} </span> {item.stream}
@@ -38,12 +35,12 @@ class ConsultantCard extends React.Component {
 									variant="secondary"
 									href={item.cvLink + "&download=1"}
 								>
-									Download CV
+									Download Profile
 								</Button>{" "}
 							</Card.Text>
 						</Card.Body>
 					</Col>
-					<Col className="col-bio" xs={"7"}>
+					<Col className="col-bio">
 						<li className="bio" style={{ listStyleType: "none" }}>
 							{item.bio}
 						</li>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SpartaConnect_API.Models;
 
 namespace SpartaConnect_API.Controllers
@@ -24,7 +25,7 @@ namespace SpartaConnect_API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Consultant>>> GetConsultant()
         {
-            return await _context.Consultant.Include(c=>c.Project).ToListAsync();
+            return await _context.Consultant.ToListAsync();
         }
 
         // GET: api/Consultants/5
@@ -77,12 +78,15 @@ namespace SpartaConnect_API.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Consultant>> PostConsultant(Consultant consultant)
+        public async Task<ActionResult<Consultant>> PostConsultant([FromBody] List<Consultant> consultants)
         {
-            _context.Consultant.Add(consultant);
+            foreach (var c in consultants)
+            {
+                _context.Consultant.Add(c);
+            }
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetConsultant", new { id = consultant.ConsultantId }, consultant);
+            return Ok();
         }
 
         // DELETE: api/Consultants/5

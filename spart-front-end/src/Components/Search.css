@@ -1,0 +1,11 @@
+.button-group {
+	display: flex;
+}
+.search {
+	display: flex;
+	width: 25%;
+}
+
+.search-container {
+	display: flex !important;
+}

@@ -1,6 +1,10 @@
 .title {
-	text-shadow: 4px 6px 9px #e33661;
 	color: white;
 	outline: black;
 	outline-width: thick;
+	font-family: "Roboto", sans-serif;
+}
+
+.dropdown {
+	background-color: transparent;
 }

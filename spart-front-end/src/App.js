@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap/";
 import ConsultantCard from "./Components/ConsultantCard";
+import Search from "./Components/Search";
 import NavBar from "./Components/NavBar";
 import ReactPlayer from "react-player";
 
@@ -52,20 +53,26 @@ class App extends React.Component {
 			}
 			newList = currentList.filter(item => {
 				const lc = item.firstName.toLowerCase();
+				const ln = item.lastName.toLowerCase();
+				const fullname = lc + " " + ln;
 				const filter = e.target.value.toLowerCase();
-				return lc.includes(filter);
+				return fullname.includes(filter);
 			});
 		} else {
 			newList = this.state.items;
 		}
-
-		this.setState({
-			tempItems: newList,
-			isNameFiltered: true
-		});
+		if (e.target.value === "") {
+			this.setState({ isNameFiltered: false, tempItems: this.state.items });
+		} else {
+			this.setState({
+				tempItems: newList,
+				isNameFiltered: true
+			});
+		}
 	}
 
 	updateFilterByStream(e) {
+		this.setState({ isStreamFiltered: false });
 		// Variable to hold the original version of the list
 		let currentList = [];
 		// Variable to hold the filtered list before putting into state
@@ -101,20 +108,21 @@ class App extends React.Component {
 
 		return (
 			<div>
-				<NavBar
+				<NavBar />
+				<Search
 					handleList={list}
 					TriggerFilterChange={this.updateFilterByStream}
 					TriggerListChange={this.updateFilter}
-				/>
+				></Search>
 				{filteredList.map(item => (
 					<Container key={item.consultantId}>
-						<Row className="justify-content-md-center">
-							<Col xs="6">
+						<Row className="md-center ">
+							<Col xl="6">
 								<ConsultantCard handleStudents={item} />
 							</Col>
-							<Col xs="6" className="player-wrapper">
+							<Col xl="6" className="player-wrapper">
 								<ReactPlayer
-									url="/https://www.youtube.com/watch?v=e05V9W3UHOY.mp4"
+									url={item.videoLink}
 									width="100%"
 									height="100%"
 									controls
