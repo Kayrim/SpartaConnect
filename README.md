@@ -101,9 +101,10 @@ User Stories
 3. View ==> Solution Explorer ==> SpartaConnect_API ==> SQLQUERY.sql
 4. Run Query ==> Choose Server e.g. (localdb)
 5. Open spart-front-end in Visual Code
-6. Build and Run SpartaConnect_API.sln  
-7. Within Visual Code with spart-front-end open access the terminal and input npm start
-8. Press enter to run 
+6. Create a new terminal and type 'npm install node-modules' and press enter and wait for it to install
+7. Build and Run SpartaConnect_API.sln  
+8. Within Visual Code with spart-front-end open access the terminal and input npm start
+9. Press enter to run 
 
 ### Prerequisites
 
