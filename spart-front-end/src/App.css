@@ -6,10 +6,12 @@
 	max-width: 90% !important;
 
 	align-content: center !important;
+	transition: all 1s;
 }
 
 .container:hover {
 	box-shadow: 10px 10px 10px 10px #e33661;
+	transform: scale(1.1);
 }
 
 .div {
