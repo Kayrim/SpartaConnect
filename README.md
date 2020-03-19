@@ -21,6 +21,7 @@
     + [Next sprint improvements:](#next-sprint-improvements-)
 - [Getting Started](#getting-started)
     * [MVC startup instructions:](#MVC-startup-instructions)
+    * [React startup instructions:](#React-startup-instructions)
     * [Prerequisites](#prerequisites)
 - [Running the tests](#running-the-tests)
 - [Deployment](#deployment)
