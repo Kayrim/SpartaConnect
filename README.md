@@ -84,7 +84,7 @@ User Stories
 
 ### MVC startup instructions:
 1. Clone the project repo from branch: mvc2
-2. Load up VS
+2. Load up SpartaConnect_API.sln in VS
 3. View ==> Sql server object explorer
 4. Under chosen server (e.g localdb) right-click ==> New Query
 5. In Solution Explorer right-click project 'SpartaConnectAPI' and open file location
