@@ -1,15 +1,15 @@
-#Contents
+## Table of Contents
 - [SpartaWebApp](#spartawebapp)
 - [Daily Standup Log](#daily-standup-log)
   * [Standup 1](#standup-1)
   * [Standup 2](#standup-2)
-    + [What we did yesterday:](#what-we-did-yesterday-)
-    + [What we will do today:](#what-we-will-do-today-)
-    + [Blockers:](#blockers-)
+    + [What we did yesterday](#what-we-did-yesterday)
+    + [What we will do today](#what-we-will-do-today)
+    + [Blockers](#blockers)
   * [Standup 3](#standup-3)
-    + [What we did yesterday:](#what-we-did-yesterday-)
-    + [What we will do today:](#what-we-will-do-today-)
-    + [Blockers:](#blockers-)
+    + [What we did yesterday](#what-we-did-yesterday-1)
+    + [What we will do today](#what-we-will-do-today-1)
+    + [Blockers](#blockers-1)
 - [Sprint Log](#sprint-log)
   * [Sprint 0](#sprint-0)
   * [Sprint 1 Planning](#sprint-1-planning)
@@ -20,9 +20,10 @@
     + [What we could've done better:](#what-we-could-ve-done-better-)
     + [Next sprint improvements:](#next-sprint-improvements-)
 - [Getting Started](#getting-started)
-    * [MVC startup instructions:](#MVC-startup-instructions)
-    * [React startup instructions:](#React-startup-instructions)
-    * [Prerequisites](#prerequisites)
+    + [MVC startup instructions](#mvc-startup-instructions-)
+    + [React startup instructions](#react-startup-instructions)
+    + [Batch POST Requests](#batch-post-requests)
+    + [Prerequisites](#prerequisites)
 - [Running the tests](#running-the-tests)
 - [Deployment](#deployment)
 - [Built With](#built-with)
@@ -79,12 +80,12 @@ On communication with the product owner, our feedback indicated we were on the r
 Created a MVP to show the product owner.
 ### What we could've done better:
 Follow the User Stories in a more methodical manner.
-### Next sprint improvements:
+### Next sprint improvements
 User Stories 
 
 # Getting Started
 
-### MVC startup instructions:
+### MVC startup instructions
 1. Clone the project repo from branch: mvc2
 2. Load up SpartaConnect_API.sln in VS
 3. View ==> Solution Explorer ==> SpartaConnect_API ==> SQLQUERY.sql
@@ -105,6 +106,42 @@ User Stories
 7. Build and Run SpartaConnect_API.sln  
 8. Within Visual Code with spart-front-end open access the terminal and input npm start
 9. Press enter to run 
+
+### Batch POST Requests
+
+Post requests can be made in batches of objects allowing you to add multiple consultants in one request.
+
+The form and fields required are below:
+```
+[
+{
+        "lastName": "object",
+        "firstName": "one",
+        "bio": "null",
+        "university": "null",
+        "degree": "null",
+        "grade": "null",
+        "stream": "null",
+        "cvLink": "null",
+        "videoLink": "null",
+        "photoLink": "null"
+    },{
+        "lastName": "object",
+        "firstName": "two",
+        "bio": "null",
+        "university": "null",
+        "degree": "null",
+        "grade": "null",
+        "stream": "null",
+        "cvLink": "null",
+        "videoLink": "null",
+        "photoLink": "null"
+    
+}
+]
+```
+A single object would still need to be placed in an Array [{ }], as the API is looking for an array of objects
+
 
 ### Prerequisites
 
