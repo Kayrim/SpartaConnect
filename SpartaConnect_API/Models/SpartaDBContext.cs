@@ -27,7 +27,8 @@ namespace SpartaConnect_API.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Initial Catalog=SpartaDB;");
+
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SpartaDB;");
             }
         }
 
@@ -160,7 +161,8 @@ namespace SpartaConnect_API.Models
             modelBuilder.Entity<TrainerCourses>(entity =>
             {
                 entity.HasKey(e => new { e.CourseId, e.TrainerId })
-                    .HasName("PK__TrainerC__1A4BD03EFC2E8CF4");
+
+                    .HasName("PK__TrainerC__1A4BD03E821E15DC");
 
                 entity.Property(e => e.CourseId).HasColumnName("CourseID");
 
