@@ -82,6 +82,22 @@ User Stories
 
 # Getting Started
 
+### MVC startup instructions:
+1. Clone the project repo from branch: mvc2
+2. Load up VS
+3. View ==> Sql server object explorer
+4. Under chosen server (e.g localdb) right-click ==> New Query
+5. In Solution Explorer right-click project 'SpartaConnectAPI' and open file location
+6. Open 'SQLQUERY.sql' using preferred text editor
+7. Copy Content and paste in 'New Query' in VS
+8. Run query
+9. In solution Explorer right-click ==> Solution'SpartaConnectAPI' ==> Properties
+10. Startup project ==> Multiple startup projects ==> Under 'Action' column set both SpartaConnect_API and SpartaConnect_MVC to 'Start'
+11. Apply and Close
+12. Build Solution and Run
+
+### React startup instructions
+
 Clone the project from github and run the SQL query to create the SpartaDB.
 
 ### Prerequisites
@@ -94,7 +110,7 @@ Explain how to run the automated tests for this system
 
 # Deployment
 
-Web application will be deploted on onto netlify.
+Web application will be deployed onto netlify.
 
 # Built With
 
