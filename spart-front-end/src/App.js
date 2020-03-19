@@ -21,7 +21,7 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch("http://localhost:56767/api/consultants")
+		fetch(process.env.REACT_APP_API_URL)
 			.then(res => res.json())
 			.then(json => {
 				this.setState({
