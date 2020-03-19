@@ -106,7 +106,7 @@
         <li class="filter-item1">
             @using (Html.BeginForm("Index", "Consultants", FormMethod.Get, new { @class = "search-form" }))
             {
-                @Html.TextBox("input", "Search by Name", new { @class = "form-input" })
+                @Html.TextBox("input", null, new { placeholder="Search By Name", @class = "form-input" })
                 @*@Html.TextBox("input")*@
                 <input class="btn btn-secondary" type="submit" value="Search" placeholder="Search by Name" />
             }
@@ -145,6 +145,7 @@ else
     foreach (var item in Model)
     {
         string imagePath = $@"https://localhost:44301/img/{item.FirstName}_{item.LastName}.jpg";
+        string videoPath = $@"https://www.youtube.com/watch?v=9ps2_2Bq1Ao";
 
 
     <div class="card">
@@ -200,7 +201,7 @@ else
 
             <div class="div3">
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/y881t8ilMyc" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="@videoPath" frameborder="0" allowfullscreen></iframe>
 
             </div>
 
