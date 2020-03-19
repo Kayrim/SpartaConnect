@@ -7,6 +7,7 @@
 	transition: all 0.5s;
 
 	align-content: center !important;
+	transition: all 1s;
 }
 
 .container:hover {

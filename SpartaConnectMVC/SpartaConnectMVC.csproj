@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Images\NewFolder\**" />
+    <Content Remove="Images\NewFolder\**" />
+    <EmbeddedResource Remove="Images\NewFolder\**" />
+    <None Remove="Images\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpartaConnect_API\SpartaConnect_API.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />    
+    <PackageReference Include="microsoft.entityframeworkcore.design" Version="3.1.1" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="3.1.1" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlite" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\Hassan_Abdullahi.jpg" />
+    <None Include="wwwroot\img\James_Kavanagh.jpg" />
+    <None Include="wwwroot\img\Jamie_Benjamin.jpg" />
+    <None Include="wwwroot\img\Jordan_Benbelaid.jpg" />
+    <None Include="wwwroot\img\Karim_Bakkali.jpg" />
+    <None Include="wwwroot\img\Stephen_Callum.jpg" />
+    <None Include="wwwroot\img\Timothy_Wong.jpg" />
+  </ItemGroup>
+
+
+
+</Project>
