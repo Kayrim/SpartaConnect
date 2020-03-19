@@ -107,7 +107,7 @@ Web application will be deploted on onto netlify.
 * **Jamie Benjamin** [Github](https://github.com/jamieb97)
 * **James Kavanagh** [Github](https://github.com/jwKav)
 * **Jordan Benbelaid** [Github](https://github.com/jordanbenbelaid)
-* **Hassan** [Github](https://github.com/)
+* **Hassan Abdullahi** [Github](https://github.com/Hassan822)
 * **Timothy Wong** [Github](https://github.com/tim8642)
 
 # License
