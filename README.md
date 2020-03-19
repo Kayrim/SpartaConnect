@@ -20,7 +20,7 @@
     + [What we could've done better:](#what-we-could-ve-done-better-)
     + [Next sprint improvements:](#next-sprint-improvements-)
 - [Getting Started](#getting-started)
-    + [MVC startup instructions](#MVC startup instructions)
+    + [MVC startup instructions:](#mvc-startup-instructions-)
     + [Prerequisites](#prerequisites)
 - [Running the tests](#running-the-tests)
 - [Deployment](#deployment)
