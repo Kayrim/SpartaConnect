@@ -16,7 +16,9 @@ class NavBar extends React.Component {
 							/>
 						</Navbar.Brand>
 					</Nav>
-					<h3 className="title">Sparta Profiles</h3>
+					<h3 className="title">
+						<span className="span-baby">Sparta Profiles</span>
+					</h3>
 				</Navbar>
 			</div>
 		);

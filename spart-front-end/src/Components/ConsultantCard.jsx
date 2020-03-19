@@ -35,7 +35,8 @@ class ConsultantCard extends React.Component {
 									variant="secondary"
 									href={item.cvLink + "&download=1"}
 								>
-									Download Profile
+									Download Profile {"  "}
+									<img className="align" alt="" src="Icons\Download.png" />
 								</Button>{" "}
 							</Card.Text>
 						</Card.Body>

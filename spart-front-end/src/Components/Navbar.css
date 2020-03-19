@@ -8,3 +8,13 @@
 .dropdown {
 	background-color: transparent;
 }
+
+.span-baby {
+	background: -webkit-linear-gradient(
+		180deg,
+		rgb(238, 238, 238),
+		rgb(204, 0, 102)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
