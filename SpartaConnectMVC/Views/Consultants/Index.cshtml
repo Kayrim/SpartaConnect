@@ -98,6 +98,9 @@
         float: right;
         margin-right: -67.4vw;
     }
+    .btn-secondary{
+        background-color:#e33661;
+    }
 </style>
 
 <div class="filter-div">
@@ -106,9 +109,8 @@
         <li class="filter-item1">
             @using (Html.BeginForm("Index", "Consultants", FormMethod.Get, new { @class = "search-form" }))
             {
-                @Html.TextBox("input", null, new { placeholder="Search By Name", @class = "form-input" })
-                @*@Html.TextBox("input")*@
-                <input class="btn btn-secondary" type="submit" value="Search" placeholder="Search by Name" />
+                @Html.TextBox("input", null, new { placeholder = "Search By Name", @class = "form-input" })
+                <input class="btn btn-light" type="submit" value="Search" />
             }
         </li>
         <li class="filter-item">
@@ -118,13 +120,13 @@
             <input type="button" class="btn btn-primary" value="DevOps" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "DevOps" })'" />
         </li>
         <li class="filter-item">
-            <input type="button" class="btn btn-primary" value="BA" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "BA" })'" />
-        </li>
-        <li class="filter-item">
             <input type="button" class="btn btn-primary" value="SDET" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "SDET" })'" />
         </li>
         <li class="filter-item">
             <input type="button" class="btn btn-primary" value="Data" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "Data" })'" />
+        </li>
+        <li class="filter-item">
+            <input type="button" class="btn btn-primary" value="BA" onclick="location.href='@Url.Action("GetFilterResults", "Consultants", new { stream = "BA" })'" />
         </li>
         <li class="filter-item">
             <input type="button" class="btn btn-primary" value="All" onclick="location.href='@Url.Action("Index", "Consultants")'" />
@@ -145,7 +147,7 @@ else
     foreach (var item in Model)
     {
         string imagePath = $@"https://localhost:44301/img/{item.FirstName}_{item.LastName}.jpg";
-        string videoPath = $@"https://www.youtube.com/watch?v=9ps2_2Bq1Ao";
+        string videoPath = @"https://www.youtube.com/embed/9ps2_2Bq1Ao";
 
 
     <div class="card">
@@ -201,8 +203,7 @@ else
 
             <div class="div3">
 
-                <iframe width="560" height="315" src="@videoPath" frameborder="0" allowfullscreen></iframe>
-
+                <iframe width="560" height="315" src=@videoPath frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
         </div>
