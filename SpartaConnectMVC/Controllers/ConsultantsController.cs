@@ -32,7 +32,8 @@ namespace SpartaConnectMVC.Controllers
                 {
                     return View(jsonresult);
                 }
-                var result = jsonresult.Where(x => x.FirstName.Contains(input) || x.LastName.Contains(input) || input == null);
+                string newInput = char.ToUpper(input[0]) + input.Substring(1);
+                var result = jsonresult.Where(x => x.FirstName.StartsWith(newInput) || x.LastName.StartsWith(newInput) || newInput == null);
                 return View(result);
             }
         }
