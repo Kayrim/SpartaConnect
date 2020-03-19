@@ -98,8 +98,17 @@
         float: right;
         margin-right: -67.4vw;
     }
-    .btn-secondary{
-        background-color:#e33661;
+    .btn-primary:visited, .btn-primary:focus, .btn-primary:hover, .btn-primary:active {
+        background-color: #ef93aa !important;
+        border-color: #ef93aa !important;
+        outline-color: #ef93aa !important;
+        flood-color: #ef93aa !important;
+        outline:none !important;
+    }
+    .btn-primary {
+        background-color: #e33661;
+        border-color: #e33661;
+        outline-color: #e33661;
     }
 </style>
 
@@ -110,7 +119,7 @@
             @using (Html.BeginForm("Index", "Consultants", FormMethod.Get, new { @class = "search-form" }))
             {
                 @Html.TextBox("input", null, new { placeholder = "Search By Name", @class = "form-input" })
-                <input class="btn btn-light" type="submit" value="Search" />
+                <input class="btn btn-primary" type="submit" value="Search" />
             }
         </li>
         <li class="filter-item">
