@@ -86,7 +86,7 @@ User Stories
 # Getting Started
 
 ### MVC startup instructions
-1. Clone the project repo from branch: mvc2
+1. Clone the project repo from branch: master
 2. Load up SpartaConnect_API.sln in VS
 3. View ==> Solution Explorer ==> SpartaConnect_API ==> SQLQUERY.sql
 4. Run Query ==> Choose Server e.g. (localdb)
@@ -97,7 +97,7 @@ User Stories
 
 ### React startup instructions
 
-1. Clone the project repo from branch: react-frontend
+1. Clone the project repo from branch: master
 2. Load up SpartaConnect_API.sln in Visual Studio
 3. View ==> Solution Explorer ==> SpartaConnect_API ==> SQLQUERY.sql
 4. Run Query ==> Choose Server e.g. (localdb)
