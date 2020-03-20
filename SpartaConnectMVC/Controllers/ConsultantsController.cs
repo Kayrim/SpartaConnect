@@ -20,7 +20,7 @@ namespace SpartaConnectMVC.Controllers
         {
             _context = context;
         }
-        static Uri url = new Uri("http://localhost:56767/api/Consultants");
+        static Uri url = new Uri(Environment.GetEnvironmentVariable("api_connection_string"));
 
         public async Task<IActionResult> Index(string input)
         {
@@ -33,8 +33,15 @@ namespace SpartaConnectMVC.Controllers
                     return View(jsonresult);
                 }
                 string newInput = char.ToUpper(input[0]) + input.Substring(1);
-                var result = jsonresult.Where(x => x.FirstName.StartsWith(newInput) || x.LastName.StartsWith(newInput) || newInput == null);
-                return View(result);
+                var result = jsonresult.Where(x => x.FirstName.Contains(newInput) || x.LastName.Contains(newInput) || newInput == null);
+                if (result.Count() == 0)
+                {
+                    var result1 = jsonresult.Where(x => x.FirstName.Contains(input) || x.LastName.Contains(input) || input == null);
+                    return View(result1);
+                }                             
+                    return View(result);
+                
+                
             }
         }
         public async Task<IActionResult> GetFilterResults(string stream)

@@ -25,7 +25,7 @@ namespace SpartaConnectMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SpartaDBContext>(o => o.UseSqlServer(Configuration.GetConnectionString("SpartaDb")));
+            services.AddDbContext<SpartaDBContext>(o => o.UseSqlServer(Environment.GetEnvironmentVariable("api_connection_string")));
             services.AddControllersWithViews();
         }
 
