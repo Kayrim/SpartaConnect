@@ -25,13 +25,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\img\Hassan_Abdullahi.jpg" />
-    <None Include="wwwroot\img\James_Kavanagh.jpg" />
-    <None Include="wwwroot\img\Jamie_Benjamin.jpg" />
-    <None Include="wwwroot\img\Jordan_Benbelaid.jpg" />
-    <None Include="wwwroot\img\Karim_Bakkali.jpg" />
-    <None Include="wwwroot\img\Stephen_Callum.jpg" />
-    <None Include="wwwroot\img\Timothy_Wong.jpg" />
+    <None Include="wwwroot\Pics\Hassan_Abdullahi.jpg" />
+    <None Include="wwwroot\Pics\James_Kavanagh.jpg" />
+    <None Include="wwwroot\Pics\Jamie_Benjamin.jpg" />
+    <None Include="wwwroot\Pics\Jordan_Benbelaid.jpg" />
+    <None Include="wwwroot\Pics\Karim_Bakkali.jpg" />
+    <None Include="wwwroot\Pics\Stephen_Callum.jpg" />
+    <None Include="wwwroot\Pics\Timothy_Wong.jpg" />
   </ItemGroup>
 
 
