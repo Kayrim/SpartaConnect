@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpartaConnect_API", "SpartaConnect_API\SpartaConnect_API.csproj", "{A56F380C-D043-4105-8998-3AC8C0E88DD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpartaConnectMVC", "SpartaConnectMVC\SpartaConnectMVC.csproj", "{D167C44F-CB54-4146-BAAC-C7A22D310AE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A56F380C-D043-4105-8998-3AC8C0E88DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56F380C-D043-4105-8998-3AC8C0E88DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56F380C-D043-4105-8998-3AC8C0E88DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56F380C-D043-4105-8998-3AC8C0E88DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D167C44F-CB54-4146-BAAC-C7A22D310AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D167C44F-CB54-4146-BAAC-C7A22D310AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D167C44F-CB54-4146-BAAC-C7A22D310AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D167C44F-CB54-4146-BAAC-C7A22D310AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {422CD28E-2472-4F37-BB51-ADC8619B088F}
+	EndGlobalSection
+EndGlobal

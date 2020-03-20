@@ -1,0 +1,20 @@
+.title {
+	color: white;
+	outline: black;
+	outline-width: thick;
+	font-family: "Roboto", sans-serif;
+}
+
+.dropdown {
+	background-color: transparent;
+}
+
+.span-baby {
+	background: -webkit-linear-gradient(
+		180deg,
+		rgb(221, 221, 221),
+		rgb(87, 87, 87)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
